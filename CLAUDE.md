@@ -43,6 +43,8 @@ npm run dev        # שרת פיתוח
 npm run build      # build production ל-dist/
 npm run preview    # הרצת ה-build מקומית (נדרש לבדיקת PWA/Offline)
 npm test           # הרצת Unit Tests (Vitest, קבצים תחת tests/)
+npm run deploy     # build + פריסה ל-Cloudflare (wrangler.jsonc, דורש wrangler login)
+npm run generate-icons  # יצירת אייקוני PWA מ-public/icon.svg (pwa-assets.config.ts)
 ```
 
 ## מבנה תיקיות
