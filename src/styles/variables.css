@@ -46,4 +46,6 @@
   /* Motion */
   --duration-fast: 150ms;
   --duration-medium: 250ms;
+  --duration-mark: 300ms;
+  --duration-win-line: 450ms;
 }

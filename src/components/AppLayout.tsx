@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router';
+import { setMuted as setAudioMuted, unlock as unlockAudio } from '../audio/audioEngine';
 import BrandTitle from './BrandTitle';
 import Navigation from './Navigation';
 
@@ -11,7 +12,18 @@ export interface LayoutContext {
 export default function AppLayout() {
   // Session-only audio setting; resets to sound-on on every reload.
   const [muted, setMuted] = useState(false);
-  const context: LayoutContext = { muted, toggleMuted: () => setMuted((m) => !m) };
+
+  useEffect(() => {
+    setAudioMuted(muted);
+  }, [muted]);
+
+  const context: LayoutContext = {
+    muted,
+    toggleMuted: () => {
+      unlockAudio();
+      setMuted((m) => !m);
+    },
+  };
 
   return (
     <div className="app">

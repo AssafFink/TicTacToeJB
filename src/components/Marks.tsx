@@ -11,6 +11,7 @@ export function XMark({ x = 0, y = 0, size = 100 }: MarkProps) {
   return (
     <path
       className="neon-x"
+      pathLength={1}
       d={`M${x + inset} ${y + inset}L${x + size - inset} ${y + size - inset}M${x + size - inset} ${y + inset}L${x + inset} ${y + size - inset}`}
       strokeWidth={size * 0.1}
       strokeLinecap="round"
@@ -23,6 +24,7 @@ export function OMark({ x = 0, y = 0, size = 100 }: MarkProps) {
   return (
     <circle
       className="neon-o"
+      pathLength={1}
       cx={x + size / 2}
       cy={y + size / 2}
       r={size * 0.38}
