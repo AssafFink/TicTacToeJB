@@ -42,7 +42,7 @@ npm install
 npm run dev        # שרת פיתוח
 npm run build      # build production ל-dist/
 npm run preview    # הרצת ה-build מקומית (נדרש לבדיקת PWA/Offline)
-npx vitest run     # הרצת Unit Tests
+npm test           # הרצת Unit Tests (Vitest, קבצים תחת tests/)
 ```
 
 ## מבנה תיקיות

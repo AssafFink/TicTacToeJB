@@ -453,9 +453,59 @@ a {
   overflow: visible;
 }
 
+.result-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, var(--board-max-size));
+  min-height: 112px;
+  padding-block: var(--space-2);
+}
+
+.result-card {
+  width: 100%;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: rgba(17, 24, 39, 0.9);
+  box-shadow: var(--glow-blue-soft);
+}
+
+.result-card__title {
+  font-size: var(--font-size-subtitle);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.result-card__subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+.result-card--player-won {
+  border-color: var(--color-primary);
+}
+
+.result-card--player-won .result-card__title {
+  color: var(--color-primary);
+  text-shadow: var(--text-glow-blue);
+}
+
+.result-card--computer-won {
+  border-color: rgba(255, 45, 85, 0.6);
+}
+
+.result-card--computer-won .result-card__title {
+  color: var(--color-accent);
+  text-shadow: var(--text-glow-red);
+}
+
+.result-card--draw .result-card__title {
+  color: var(--color-secondary);
+}
+
 .game__new-game {
   width: min(100%, var(--board-max-size));
-  margin-top: var(--space-4);
 }
 
 /* ---------- About page ---------- */
