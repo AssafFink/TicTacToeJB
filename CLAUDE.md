@@ -34,6 +34,7 @@
 - vite-plugin-pwa (Workbox) ל־Manifest ו־Service Worker
 - Vitest ל־Unit Tests; Playwright אופציונלי ל־E2E
 - Hosting: Cloudflare Static Assets, תיקיית build: `dist/`
+- GitHub Pages: `.github/workflows/deploy-pages.yml` בונה עם `BASE_PATH=/TicTacToeJB/` ופורס בכל push ל־`main`. אין לכתוב נתיבים אבסולוטיים (`/...`) בקוד — להשתמש ב־`import.meta.env.BASE_URL` / `basename` של ה־Router, כדי שהאפליקציה תעבוד גם בשורש (Cloudflare) וגם בתת־נתיב (Pages)
 
 ## פקודות
 

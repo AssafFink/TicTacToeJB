@@ -4,6 +4,9 @@ import AboutPage from '../pages/AboutPage';
 import GamePage from '../pages/GamePage';
 import HomePage from '../pages/HomePage';
 
+// Vite's BASE_URL is '/' or e.g. '/TicTacToeJB/'; the router wants it without the trailing slash.
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/';
+
 export const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -14,4 +17,4 @@ export const router = createBrowserRouter([
       { path: '*', element: <Navigate to="/" replace /> },
     ],
   },
-]);
+], { basename });

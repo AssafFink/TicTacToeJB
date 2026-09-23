@@ -4,7 +4,11 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 const THEME_COLOR = '#0B0F1A';
 
+// Public path the app is served from: '/' on Cloudflare, '/TicTacToeJB/' on GitHub Pages.
+const BASE = process.env.BASE_PATH ?? '/';
+
 export default defineConfig({
+  base: BASE,
   plugins: [
     react(),
     VitePWA({
@@ -12,14 +16,14 @@ export default defineConfig({
       injectRegister: 'script-defer',
       includeManifestIcons: false, // already matched by globPatterns
       manifest: {
-        id: '/',
+        id: BASE,
         name: 'איקס עיגול',
         short_name: 'איקס עיגול',
         description: 'משחק קלאסי. בכל זמן. בכל מקום.',
         lang: 'he',
         dir: 'rtl',
-        start_url: '/',
-        scope: '/',
+        start_url: BASE,
+        scope: BASE,
         display: 'standalone',
         orientation: 'portrait',
         theme_color: THEME_COLOR,
@@ -34,7 +38,7 @@ export default defineConfig({
       workbox: {
         // Precache the whole app shell; Chrome only needs woff2 fonts.
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
-        navigateFallback: '/index.html',
+        navigateFallback: `${BASE}index.html`,
         cleanupOutdatedCaches: true,
       },
     }),
